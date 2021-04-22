@@ -233,6 +233,9 @@ public class Grafica extends JFrame {
 		btnNewButton_4.setBounds(352, 121, 92, 29);
 		panel_2.add(btnNewButton_4);
 		
-		
+
+
+
+		//ciao darisi
 	}
 }
