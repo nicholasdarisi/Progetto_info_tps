@@ -10,8 +10,7 @@ public class Main {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Grafica window = new View.Grafica();
-                    window.frame.setVisible(true);
+                    Grafica window = new Grafica();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
