@@ -3,9 +3,9 @@ package main;
 import java.awt.EventQueue;
 
 
-import View.Grafica;
+import view.Grafica;
 
-public class Principale {
+public class Main {
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
