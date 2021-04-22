@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import java.awt.EventQueue;
 
@@ -236,5 +236,6 @@ public class Grafica extends JFrame {
 		
 	}
 	//Darisi Gay
+	//Lin gay
 	//ciao lin
 }
