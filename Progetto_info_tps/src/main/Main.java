@@ -3,7 +3,7 @@ package main;
 import java.awt.EventQueue;
 
 
-import View.Grafica;
+import view.Grafica;
 
 public class Main {
     public static void main(String[] args) {
