@@ -18,11 +18,11 @@ public class Squadra {
 		vittorie = 0;
 		pareggi = 0;
 		sconfitte = 0;
-		g_fatti = new Integer [20];
+		g_fatti = new Integer [22];
 		g_subiti = 0;
 		diff_reti = 0;
 		punti = 0;
-		id = new Integer [20];
+		id = new Integer [22];
 		this.potenza = potenza;
 		this.ids = ids;
 		
@@ -97,7 +97,8 @@ public class Squadra {
 
 	public void setId(int id_) {
 		int i = 0;
-		while(this.id[i] != null) {
+		while(this.id[i] != null ) {
+			if (i!=21) break;
 			i++;
 		}
 		id[i] = id_;

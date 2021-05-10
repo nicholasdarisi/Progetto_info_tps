@@ -36,6 +36,7 @@ public class Partita implements Runnable{
 			
 			int i = g.getn_giornata();
 			goal=g.in_game(s);
+			System.out.println("goal:" +goal);
 			s.setG_fatti(goal);
 			
 			try {
