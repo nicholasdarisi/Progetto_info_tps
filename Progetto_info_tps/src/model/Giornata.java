@@ -9,12 +9,15 @@ public class Giornata {
 	private Squadra s1 = null;
 	private Squadra s2 = null;
 	private int x;
+	private int m;
 	private int count_p;
 	private ArrayList <Integer> darisa = new ArrayList <Integer>();
 	
-	public Giornata(int n) {
+	public Giornata(int n, int max) {
 		// TODO Auto-generated constructor stub
 		x = n;
+		m = max;
+		this.darirandom();
 	}
 	
 	private void darirandom() {
@@ -22,11 +25,11 @@ public class Giornata {
 		ArrayList <Integer> random = new ArrayList <Integer>();
 		int n;
 		
-		for (Integer i = 0; i<20; i++) {
+		for (Integer i = 0; i<12; i++) {
 			random.add(i);
 		}
 		
-		for (Integer i = 0; i<20; i++) {
+		for (Integer i = 0; i<12; i++) {
 			do {
 			n = ThreadLocalRandom.current().nextInt(0,random.size());
 		}while(n==darisa.size()-1);
@@ -38,13 +41,15 @@ public class Giornata {
 	
 	public synchronized void start_game(Squadra x) {
 		
-		while (campolibero==0 && x.getids_int()!=count_p && x.getids_int()!=darisa.get(count_p+1)) {
+		while (campolibero==0 || x.getids_int()!=darisa.get(count_p) || x.getids_int()!=darisa.get(count_p+1)) {
 			
 			try {
 				wait();
 			} catch (InterruptedException e) {}
 			
 		}
+		
+		campolibero--;
 		
 		if (s1 == null) s1 = x;
 		else s2 = x;
@@ -53,8 +58,6 @@ public class Giornata {
 	}
 		
 	public int in_game(Squadra x) {
-		
-		campolibero--;
 		
 		return ThreadLocalRandom.current().nextInt(1,x.getPotenza());
 		
@@ -89,13 +92,13 @@ public class Giornata {
 	public synchronized void count_partite() {
 		count_p++;
 		
-		if(count_p==12) {
+		if(count_p==m) {
 			count_p=0;
 			x++;
 		}
 	}
 	
-	public int getid(Squadra x) {
+	public synchronized int getid(Squadra x) {
 		
 		while(s2 == null) {
 			try {
