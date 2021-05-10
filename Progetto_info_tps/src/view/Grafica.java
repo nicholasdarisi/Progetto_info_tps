@@ -19,12 +19,13 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
+import javax.swing.ImageIcon;
 
 public class Grafica extends JFrame {
 	
 	private JTextField textField;
 	public JFrame frame;
-	ArrayList<DefaultListModel> lista = new ArrayList<DefaultListModel>();
+	//ArrayList<DefaultListModel> lista = new ArrayList<DefaultListModel>();
 	
 	
 	public Grafica() {
@@ -43,84 +44,33 @@ public class Grafica extends JFrame {
 		frame.getContentPane().add(panel, "name_1193192040720394");
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Superlega");
-		lblNewLabel.setBounds(193, 11, 61, 16);
-		panel.add(lblNewLabel);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JButton btnNewButton = new JButton("Classifica");
-		btnNewButton.setBounds(293, 98, 130, 58);
-		panel.add(btnNewButton);
-		
-		
-		JLabel lblNewLabel_1 = new JLabel("Elenco squadre");
-		lblNewLabel_1.setBounds(55, 61, 95, 16);
-		panel.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("Inter");
-		lblNewLabel_2.setBounds(27, 103, 29, 16);
-		panel.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("Milan");
-		lblNewLabel_3.setBounds(27, 125, 34, 16);
-		panel.add(lblNewLabel_3);
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JLabel lblNewLabel_4 = new JLabel("Juventus");
-		lblNewLabel_4.setBounds(27, 149, 54, 16);
-		panel.add(lblNewLabel_4);
-		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JLabel lblNewLabel_5 = new JLabel("Arsenal");
-		lblNewLabel_5.setBounds(27, 173, 47, 16);
-		panel.add(lblNewLabel_5);
-		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JLabel lblNewLabel_6 = new JLabel("Atletico Madrid");
-		lblNewLabel_6.setBounds(127, 125, 96, 16);
-		panel.add(lblNewLabel_6);
-		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JLabel lblNewLabel_9 = new JLabel("Liverpool");
-		lblNewLabel_9.setBounds(27, 226, 58, 16);
-		panel.add(lblNewLabel_9);
-		lblNewLabel_9.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JLabel lblNewLabel_7 = new JLabel("Chelsea");
-		lblNewLabel_7.setBounds(27, 198, 49, 16);
-		panel.add(lblNewLabel_7);
-		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JLabel lblNewLabel_8 = new JLabel("Barcellona");
-		lblNewLabel_8.setBounds(127, 103, 64, 16);
-		panel.add(lblNewLabel_8);
-		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JLabel lblNewLabel_10 = new JLabel("Manchester City");
-		lblNewLabel_10.setBounds(127, 149, 105, 16);
-		panel.add(lblNewLabel_10);
-		
-		JLabel lblNewLabel_11 = new JLabel("Manchester Utd");
-		lblNewLabel_11.setBounds(127, 173, 105, 16);
-		panel.add(lblNewLabel_11);
-		
-		JLabel lblNewLabel_12 = new JLabel("Real Madrid");
-		lblNewLabel_12.setBounds(127, 198, 79, 16);
-		panel.add(lblNewLabel_12);
-		
-		JLabel lblNewLabel_13 = new JLabel("Tottenham");
-		lblNewLabel_13.setBounds(127, 226, 79, 16);
-		panel.add(lblNewLabel_13);
-		
 		JPanel panel_1 = new JPanel();
 		frame.getContentPane().add(panel_1, "name_1263115913667607");
 		panel_1.setLayout(null);
+		
+		JButton btnNewButton = new JButton("Classifica");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				panel.setVisible(false);
+				panel_1.setVisible(true);
+				
+			}
+		});
+		btnNewButton.setBounds(249, 238, 100, 29);
+		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel_14 = new JLabel("Classifica");
 		lblNewLabel_14.setBounds(185, 6, 61, 16);
 		panel_1.add(lblNewLabel_14);
 		
 		JButton btnNewButton_2 = new JButton("Back");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel_1.setVisible(false);
+				panel.setVisible(true);
+			}
+		});
 		btnNewButton_2.setBounds(327, 6, 117, 29);
 		panel_1.add(btnNewButton_2);
 		
@@ -184,17 +134,18 @@ public class Grafica extends JFrame {
 				panel_2.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(293, 168, 139, 58);
+		btnNewButton_1.setBounds(249, 214, 100, 22);
 		panel.add(btnNewButton_1);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("/Users/nicholasdarisi/Desktop/sup.jpg"));
+		lblNewLabel.setBounds(6, 6, 438, 266);
+		panel.add(lblNewLabel);
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(110, 48, 230, 211);
 		panel_2.add(scrollPane);
-		
-		for (int i = 0; i<20; i++ ) {
-			lista.get(i) ;
-		}
 				
 		JList list = new JList();
 		list.setModel(new AbstractListModel() {
@@ -232,6 +183,16 @@ public class Grafica extends JFrame {
 		});
 		btnNewButton_4.setBounds(352, 121, 92, 29);
 		panel_2.add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("Back");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel_2.setVisible(false);
+				panel.setVisible(true);
+			}
+		});
+		btnNewButton_5.setBounds(327, 7, 117, 29);
+		panel_2.add(btnNewButton_5);
 		
 		
 	}
