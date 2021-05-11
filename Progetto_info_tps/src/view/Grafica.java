@@ -197,7 +197,4 @@ public class Grafica extends JFrame {
 		
 		
 	}
-	//Darisi Gay
-	//Lin gay
-	//ciao lin
 }

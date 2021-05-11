@@ -26,7 +26,6 @@ public class Main {
             public void run() {
                 try {
                     Grafica window = new Grafica();
-                    window.frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
