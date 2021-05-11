@@ -92,7 +92,7 @@ public class Giornata {
 	public synchronized void count_partite() {
 		count_p++;
 		
-		if(count_p==m) {
+		if(count_p==12) {
 			count_p=0;
 			x++;
 		}
