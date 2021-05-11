@@ -12,6 +12,7 @@ public class Squadra {
 	private Integer id [];
 	private int potenza;
 	private int ids;
+	int g;
 	
 	public Squadra(int potenza, int ids) {
 		// TODO Auto-generated constructor stub
@@ -112,9 +113,7 @@ public class Squadra {
 		this.g_subiti += g_subiti;
 	}
 
-	public int getDiff_reti() {
-		return diff_reti;
-	}
+	
 
 	public void setDiff_reti(int diff_reti) {
 		this.diff_reti += diff_reti;
@@ -130,14 +129,19 @@ public class Squadra {
 	
 	public int getGoal_totali() {
 		int i = 0;
-		int t = 0;
 		while(this.g_fatti[i] != null) {
-			t += g_fatti[i];
+			g += g_fatti[i];
 			i++;
 		}
 		
-		return t;
+		return g;
 		
+	}
+	
+	public int getDiff_reti() {
+		g = getGoal_totali();
+		if (g > g_subiti) return g-g_subiti;
+		return g_subiti-g;
 	}
 
 	public int getPotenza() {

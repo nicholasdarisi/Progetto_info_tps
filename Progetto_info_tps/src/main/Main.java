@@ -21,7 +21,7 @@ public class Main {
     		t[i].start();
     	}
     	
- /*
+ 
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -32,7 +32,7 @@ public class Main {
                 }
             }
         });
-         */
+         
     }
    
 

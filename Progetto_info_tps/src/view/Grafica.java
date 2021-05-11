@@ -146,6 +146,7 @@ public class Grafica extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(110, 48, 230, 211);
 		panel_2.add(scrollPane);
+		scrollPane.getViewport().setOpaque(false);
 				
 		JList list = new JList();
 		list.setModel(new AbstractListModel() {
