@@ -10,7 +10,7 @@ import view.Grafica;
 
 public class Main {
     public static void main(String[] args) {
-    	Squadra s [] = new Squadra [12];
+    	/* Squadra s [] = new Squadra [12];
     	Partita p [] = new Partita [12];
     	Giornata g = new Giornata (1, 22);
     	Thread t [] = new Thread [12];
@@ -20,7 +20,7 @@ public class Main {
     		t[i] = new Thread(p[i]);
     		t[i].start();
     	}
-    	
+    	*/
  
         EventQueue.invokeLater(new Runnable() {
             public void run() {
