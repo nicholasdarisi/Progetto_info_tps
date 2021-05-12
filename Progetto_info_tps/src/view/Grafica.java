@@ -25,7 +25,6 @@ public class Grafica extends JFrame {
 	
 	private JTextField textField;
 	public JFrame frame;
-	//ArrayList<DefaultListModel> lista = new ArrayList<DefaultListModel>();
 	
 	
 	public Grafica() {
