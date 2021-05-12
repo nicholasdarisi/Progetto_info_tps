@@ -25,6 +25,7 @@ public class Grafica extends JFrame {
 	
 	private JTextField textField;
 	public JFrame frame;
+	private ImageIcon icon;
 	
 	
 	public Grafica() {
@@ -117,9 +118,19 @@ public class Grafica extends JFrame {
 		lblNewLabel_25.setBounds(25, 98, 61, 16);
 		panel_1.add(lblNewLabel_25);
 		
+		icon = new ImageIcon("coriandoli(1).gif");
+		JLabel lblNewLabel_1 = new JLabel(icon);
+		lblNewLabel_1.setIcon(new ImageIcon(Grafica.class.getResource("/model/coriandoli (1).gif")));
+		lblNewLabel_1.setBounds(6, 6, 438, 266);
+		panel_1.add(lblNewLabel_1);
+		
+	
+		
+		
 		JPanel panel_2 = new JPanel();
 		frame.getContentPane().add(panel_2, "name_1263126193526326");
 		panel_2.setLayout(null);
+		
 		
 		JLabel lblNewLabel_26 = new JLabel("Simulazione partite");
 		lblNewLabel_26.setHorizontalAlignment(SwingConstants.CENTER);
