@@ -3,6 +3,7 @@ package view;
 import java.awt.EventQueue;
 
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JFrame;
@@ -11,6 +12,7 @@ import javax.swing.JComboBox;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.CardLayout;
@@ -118,12 +120,12 @@ public class Grafica extends JFrame {
 		lblNewLabel_25.setBounds(25, 98, 61, 16);
 		panel_1.add(lblNewLabel_25);
 		
-		icon = new ImageIcon("coriandoli(1).gif");
+		URL url = this.getClass().getResource("/model/coriandoli.gif");
+		Icon myImgIcon = new ImageIcon(url);
+		JLabel imageLbl = new JLabel(myImgIcon);
 		JLabel lblNewLabel_1 = new JLabel(icon);
-		lblNewLabel_1.setIcon(new ImageIcon(Grafica.class.getResource("/model/coriandoli (1).gif")));
 		lblNewLabel_1.setBounds(6, 6, 438, 266);
 		panel_1.add(lblNewLabel_1);
-		
 	
 		
 		
