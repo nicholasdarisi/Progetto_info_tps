@@ -40,9 +40,9 @@ public class Giornata {
 	}
 	
 	public synchronized void start_game(Squadra x) {
-		
-		while (campolibero==0 || x.getids_int()!=darisa.get(count_p) || x.getids_int()!=darisa.get(count_p+1)) {
-			
+		System.out.println(darisa.get(count_p) + " - " + darisa.get(count_p+1) + " : " + x.getids_int());
+		while (campolibero==0 || x.getids_int()!=darisa.get(count_p) && x.getids_int()!=darisa.get(count_p+1)) {
+			System.out.println(x.getids_int() + " im out");
 			try {
 				wait();
 			} catch (InterruptedException e) {}
