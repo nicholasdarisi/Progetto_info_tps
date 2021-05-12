@@ -34,6 +34,7 @@ public class Giornata {
 			n = ThreadLocalRandom.current().nextInt(0,random.size());
 		}while(n==darisa.size()-1);
 			darisa.add(random.remove(n));
+			System.out.println(darisa);
 		}
 		
 		
@@ -41,7 +42,7 @@ public class Giornata {
 	
 	public synchronized void start_game(Squadra x) {
 		
-		while (campolibero==0 || x.getids_int()!=darisa.get(count_p) || x.getids_int()!=darisa.get(count_p+1)) {
+		while (campolibero==0 || x.getids_int()!=darisa.get(count_p) && x.getids_int()!=darisa.get(count_p+1)) {
 			
 			try {
 				wait();

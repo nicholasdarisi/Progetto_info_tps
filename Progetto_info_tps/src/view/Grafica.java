@@ -119,13 +119,6 @@ public class Grafica extends JFrame {
 		JLabel lblNewLabel_25 = new JLabel("New label");
 		lblNewLabel_25.setBounds(25, 98, 61, 16);
 		panel_1.add(lblNewLabel_25);
-		
-		URL url = this.getClass().getResource("/model/coriandoli.gif");
-		Icon myImgIcon = new ImageIcon(url);
-		JLabel imageLbl = new JLabel(myImgIcon);
-		JLabel lblNewLabel_1 = new JLabel(icon);
-		lblNewLabel_1.setBounds(6, 6, 438, 266);
-		panel_1.add(lblNewLabel_1);
 	
 		
 		
