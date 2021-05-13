@@ -84,7 +84,6 @@ public class Squadra {
 			i++;
 		}
 		g_fatti[i] = goal;
-		
 	}
 
 	public Integer[] getId_array() {

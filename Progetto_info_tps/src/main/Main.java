@@ -3,6 +3,7 @@ package main;
 import java.awt.EventQueue;
 import java.util.concurrent.ThreadLocalRandom;
 
+import controller.Controller;
 import model.Giornata;
 import model.Partita;
 import model.Squadra;
@@ -21,12 +22,11 @@ public class Main {
     		t[i] = new Thread(p[i]);
     		t[i].start();
     	}
-
- 
+        Grafica window = new Grafica();
+        window.addController(new Controller(window));
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Grafica window = new Grafica();
                     window.frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();

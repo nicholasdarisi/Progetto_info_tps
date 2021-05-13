@@ -1,5 +1,7 @@
 package view;
 
+import controller.Controller;
+
 import java.awt.EventQueue;
 
 import java.awt.event.ActionListener;
@@ -27,7 +29,14 @@ public class Grafica extends JFrame {
     private JButton btnNewButton_3;
     private JButton btnNewButton_4;
     private JButton btnNewButton_5;
-
+    public void addController(Controller a){
+        btnNewButton.addActionListener(a);
+        btnNewButton_1.addActionListener(a);
+        btnNewButton_2.addActionListener(a);
+        btnNewButton_3.addActionListener(a);
+        btnNewButton_4.addActionListener(a);
+        btnNewButton_5.addActionListener(a);
+    }
     public Grafica() {
         initialize();
     }
@@ -56,7 +65,7 @@ public class Grafica extends JFrame {
 
             }
         });
-        btnNewButton.setBounds(249, 238, 100, 29);
+        btnNewButton.setBounds(249, 230, 130, 29);
         panel.add(btnNewButton);
 
         JLabel lblNewLabel_14 = new JLabel("Classifica");
@@ -111,7 +120,7 @@ public class Grafica extends JFrame {
 
         Icon imgIcon = new ImageIcon(this.getClass().getResource("/Resource/coriandoli.gif"));
         JLabel lblNewLabel_1 = new JLabel(imgIcon);
-        lblNewLabel_1.setBounds(6, 6, 438, 266);
+        lblNewLabel_1.setBounds(0, 0, 438, 266);
         panel_1.add(lblNewLabel_1);
 
         JPanel panel_2 = new JPanel();
@@ -131,12 +140,12 @@ public class Grafica extends JFrame {
                 panel_2.setVisible(true);
             }
         });
-        btnNewButton_1.setBounds(249, 214, 100, 22);
+        btnNewButton_1.setBounds(249, 206, 130, 29);
         panel.add(btnNewButton_1);
 
         JLabel lblNewLabel = new JLabel("");
-        lblNewLabel.setIcon(new ImageIcon("/Users/nicholasdarisi/Desktop/sup.jpg"));
-        lblNewLabel.setBounds(6, 6, 438, 266);
+        lblNewLabel.setIcon(new ImageIcon(this.getClass().getResource("/Resource/sup.jpg")));
+        lblNewLabel.setBounds(0, 0, 438, 266);
         panel.add(lblNewLabel);
 
 

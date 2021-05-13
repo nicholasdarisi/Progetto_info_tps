@@ -64,14 +64,18 @@ public class Giornata {
 
 	public synchronized void out_game(Squadra x) {
 		campolibero++;
-		
-		
+
 		if (x.equals(s1)) s1 = null;
 		else s2 = null;
-		
+
+		count_p+=2;
+		if(count_p==12) {
+			count_p=0;
+			this.x++;
+		}
+
 		if (campolibero == 2) notifyAll();
-		
-		
+
 		}
 	
 	public int vittoria(Squadra x) {
@@ -87,15 +91,7 @@ public class Giornata {
 	public int getn_giornata() {
 		return x;
 	}
-	
-	public synchronized void count_partite() {
-		count_p++;
-		
-		if(count_p==12) {
-			count_p=0;
-			x++;
-		}
-	}
+
 	
 	public synchronized int getid(Squadra x) {
 		
