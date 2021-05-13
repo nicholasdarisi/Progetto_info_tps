@@ -7,7 +7,6 @@ import javax.sound.sampled.*;
 public class Sound {
 	private Clip clip;
 	private int frame;
-
 	public Sound(String fileName) {
 		try {
 			File file = new File(fileName);
