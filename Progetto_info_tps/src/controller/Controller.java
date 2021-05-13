@@ -12,13 +12,25 @@ import java.awt.event.ActionListener;
  */
 public class Controller implements ActionListener {
     Grafica view;
-    public Controller(Grafica a){
-    view = a;
+
+    public Controller(Grafica a) {
+        view = a;
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == view.getButton(0)) {
+            view.switchPanel(0);
+        }
+        if (e.getSource() == view.getButton(1)) {
+            view.switchPanel(2);
+        }
+        if (e.getSource() == view.getButton(2)) {
+            view.switchPanel(1);
+        }
+        if (e.getSource() == view.getButton(5)) {
+            view.switchPanel(3);
+        }
     }
 }

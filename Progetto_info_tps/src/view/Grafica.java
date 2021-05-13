@@ -6,19 +6,9 @@ import java.awt.EventQueue;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JFrame;
-import javax.swing.JTextField;
+import javax.swing.*;
 
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import java.awt.CardLayout;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JList;
-import javax.swing.AbstractListModel;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
 public class Grafica extends JFrame {
 
@@ -29,7 +19,11 @@ public class Grafica extends JFrame {
     private JButton btnNewButton_3;
     private JButton btnNewButton_4;
     private JButton btnNewButton_5;
-    public void addController(Controller a){
+    private JPanel panel;
+    private JPanel panel_1;
+    private JPanel panel_2;
+
+    public void addController(Controller a) {
         btnNewButton.addActionListener(a);
         btnNewButton_1.addActionListener(a);
         btnNewButton_2.addActionListener(a);
@@ -37,6 +31,45 @@ public class Grafica extends JFrame {
         btnNewButton_4.addActionListener(a);
         btnNewButton_5.addActionListener(a);
     }
+
+    public JButton getButton(int type) {
+        switch (type) {
+            case 0:
+                return btnNewButton;
+            case 1:
+                return btnNewButton_1;
+            case 2:
+                return btnNewButton_2;
+            case 3:
+                return btnNewButton_3;
+            case 4:
+                return btnNewButton_4;
+            case 5:
+                return btnNewButton_5;
+        }
+        return null;
+    }
+
+    public void switchPanel(int type) {
+        switch (type) {
+            case 0:
+                panel.setVisible(false);
+                panel_1.setVisible(true);
+                break;
+            case 1:
+                panel_1.setVisible(false);
+                panel.setVisible(true);
+                break;
+            case 2:
+                panel.setVisible(false);
+                panel_2.setVisible(true);
+                break;
+            case 3:
+                panel_2.setVisible(false);
+                panel.setVisible(true);
+        }
+    }
+
     public Grafica() {
         initialize();
     }
@@ -47,24 +80,17 @@ public class Grafica extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.getContentPane().setLayout(new CardLayout(0, 0));
-
-        JPanel panel = new JPanel();
+        frame.setResizable(false);
+        panel = new JPanel();
         frame.getContentPane().add(panel, "name_1193192040720394");
         panel.setLayout(null);
 
-        JPanel panel_1 = new JPanel();
+        panel_1 = new JPanel();
         frame.getContentPane().add(panel_1, "name_1263115913667607");
         panel_1.setLayout(null);
 
         btnNewButton = new JButton("Classifica");
-        btnNewButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
 
-                panel.setVisible(false);
-                panel_1.setVisible(true);
-
-            }
-        });
         btnNewButton.setBounds(249, 230, 130, 29);
         panel.add(btnNewButton);
 
@@ -73,12 +99,7 @@ public class Grafica extends JFrame {
         panel_1.add(lblNewLabel_14);
 
         btnNewButton_2 = new JButton("Back");
-        btnNewButton_2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                panel_1.setVisible(false);
-                panel.setVisible(true);
-            }
-        });
+
         btnNewButton_2.setBounds(327, 6, 117, 29);
         panel_1.add(btnNewButton_2);
 
@@ -123,7 +144,7 @@ public class Grafica extends JFrame {
         lblNewLabel_1.setBounds(0, 0, 438, 266);
         panel_1.add(lblNewLabel_1);
 
-        JPanel panel_2 = new JPanel();
+        panel_2 = new JPanel();
         frame.getContentPane().add(panel_2, "name_1263126193526326");
         panel_2.setLayout(null);
 
@@ -134,12 +155,7 @@ public class Grafica extends JFrame {
         panel_2.add(lblNewLabel_26);
 
         btnNewButton_1 = new JButton("Simula incontri");
-        btnNewButton_1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                panel.setVisible(false);
-                panel_2.setVisible(true);
-            }
-        });
+
         btnNewButton_1.setBounds(249, 206, 130, 29);
         panel.add(btnNewButton_1);
 
@@ -169,7 +185,7 @@ public class Grafica extends JFrame {
         scrollPane.setViewportView(list);
 
         JList list1 = new JList();
-        list1.setModel(new AbstractListModel() {
+        list1.setModel(new DefaultListModel() {
             String[] values = new String[]{"ciao1"};
 
             public int getSize() {
@@ -196,12 +212,7 @@ public class Grafica extends JFrame {
         panel_2.add(btnNewButton_4);
 
         btnNewButton_5 = new JButton("Back");
-        btnNewButton_5.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                panel_2.setVisible(false);
-                panel.setVisible(true);
-            }
-        });
+
         btnNewButton_5.setBounds(327, 7, 117, 29);
         panel_2.add(btnNewButton_5);
 
