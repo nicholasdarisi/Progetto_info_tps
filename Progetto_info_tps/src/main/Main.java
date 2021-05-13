@@ -14,7 +14,7 @@ public class Main {
     	
     	 Squadra s [] = new Squadra [12];
     	Partita p [] = new Partita [12];
-    	Giornata g = new Giornata (1, 22);
+    	Giornata g = new Giornata (0, 22);
     	Thread t [] = new Thread [12];
     	for (int i = 0; i<12; i++) {
     		s[i] = new Squadra (ThreadLocalRandom.current().nextInt(2, 6), i);

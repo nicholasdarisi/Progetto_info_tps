@@ -23,7 +23,7 @@ public class Partita implements Runnable {
     @Override
     public void run() {
         // TODO Auto-generated method stub
-        while (g.getn_giornata() <= 22) {
+        while (g.getn_giornata() < 22) {
             //inizio partita
             g.start_game(s);
             output("inizio game");
