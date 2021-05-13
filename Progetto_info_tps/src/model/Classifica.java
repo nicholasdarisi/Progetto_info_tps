@@ -3,9 +3,10 @@ package model;
 public class Classifica {
 
     Squadra[] squadre;
-
+    private int n;
     public Classifica(Squadra[] s) {
         squadre = s;
+        n = 0;
     }
 
     public String[] getClassificaG(int G) {
@@ -53,6 +54,15 @@ public class Classifica {
         return str;
 
     }
-
+    public int getNext(){
+        if(n != 11)
+        return n++;
+        return n;
+    }
+    public int getPrev(){
+        if(n != 0)
+        return n--;
+        return n;
+    }
 
 }

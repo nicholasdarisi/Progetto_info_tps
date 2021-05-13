@@ -22,6 +22,9 @@ public class Grafica extends JFrame {
     private JPanel panel;
     private JPanel panel_1;
     private JPanel panel_2;
+    private JList list1;
+    private JList list;
+    private DefaultListModel<String> model;
 
     public void addController(Controller a) {
         btnNewButton.addActionListener(a);
@@ -70,11 +73,18 @@ public class Grafica extends JFrame {
         }
     }
 
+    public void switchGiorni(String[] a){
+            model.clear();
+            for(String b : a)
+            model.addElement(b);
+    }
+
     public Grafica() {
         initialize();
     }
 
     private void initialize() {
+        model = new DefaultListModel<String>();
         frame = new JFrame();
         frame.setBounds(100, 100, 450, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -170,21 +180,11 @@ public class Grafica extends JFrame {
         panel_2.add(scrollPane);
         scrollPane.getViewport().setOpaque(false);
 
-        JList list = new JList();
-        list.setModel(new AbstractListModel() {
-            String[] values = new String[]{"ciao"};
-
-            public int getSize() {
-                return values.length;
-            }
-
-            public Object getElementAt(int index) {
-                return values[index];
-            }
-        });
+        list = new JList();
+        list.setModel(model);
         scrollPane.setViewportView(list);
 
-        JList list1 = new JList();
+        list1 = new JList();
         list1.setModel(new DefaultListModel() {
             String[] values = new String[]{"ciao1"};
 

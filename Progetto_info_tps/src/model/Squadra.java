@@ -19,7 +19,7 @@ public class Squadra {
 		vittorie = 0;
 		pareggi = 0;
 		sconfitte = 0;
-		g_fatti = new Integer [22];
+		g_fatti = new Integer [23];
 		g_subiti = 0;
 		diff_reti = 0;
 		punti = 0;

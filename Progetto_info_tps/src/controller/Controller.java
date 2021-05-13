@@ -1,5 +1,6 @@
 package controller;
 
+import model.Classifica;
 import view.Grafica;
 
 import java.awt.event.ActionEvent;
@@ -12,9 +13,11 @@ import java.awt.event.ActionListener;
  */
 public class Controller implements ActionListener {
     Grafica view;
+    Classifica c;
 
-    public Controller(Grafica a) {
+    public Controller(Grafica a,Classifica c) {
         view = a;
+        this.c = c;
     }
 
 
@@ -31,6 +34,12 @@ public class Controller implements ActionListener {
         }
         if (e.getSource() == view.getButton(5)) {
             view.switchPanel(3);
+        }
+        if(e.getSource() == view.getButton(4)){
+            view.switchGiorni(c.getClassificaG(c.getNext()));
+        }
+        if(e.getSource() == view.getButton(3)){
+            view.switchGiorni(c.getClassificaG(c.getPrev()));
         }
     }
 }
