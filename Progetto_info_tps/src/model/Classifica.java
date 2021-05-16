@@ -5,7 +5,11 @@ public class Classifica {
     Squadra[] squadre;
     private int n;
     public Classifica(Squadra[] s) {
+
         squadre = s;
+        for(Squadra a :squadre){
+            System.out.println(a);
+        }
         n = 0;
     }
 
@@ -13,8 +17,11 @@ public class Classifica {
         String[] a = new String[12];
 
         for (int i = 0; i < 12; i++) {
+            if(squadre[i] == null) System.out.println("Squadra "+ i +  " e null");
+            else
             a[i] = "Squadra  " + squadre[i].getids_int() + " " + squadre[i].getG_fatti()[G] + " - " +
                     squadre[squadre[i].getId_array()[G]].getG_fatti()[G] + " Squadra " + squadre[i].getId_array()[G];
+
         }
 
         return a;

@@ -13,13 +13,15 @@ import view.Grafica;
 public class Main {
     public static void main(String[] args) {
     	
-    	 Squadra s [] = new Squadra [12];
+        Squadra s [] = new Squadra [12];
     	Partita p [] = new Partita [12];
     	Giornata g = new Giornata (0, 22);
+    	for(int i = 0 ; i<12 ; i++){
+            s[i] = new Squadra (ThreadLocalRandom.current().nextInt(2, 6), i);
+        }
         Classifica c = new Classifica(s);
     	Thread t [] = new Thread [12];
     	for (int i = 0; i<12; i++) {
-    		s[i] = new Squadra (ThreadLocalRandom.current().nextInt(2, 6), i);
     		p[i] = new Partita (g ,s[i] );
     		t[i] = new Thread(p[i]);
     		t[i].start();
