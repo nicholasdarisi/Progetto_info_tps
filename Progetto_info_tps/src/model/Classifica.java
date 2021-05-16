@@ -1,27 +1,28 @@
 package model;
 
 public class Classifica {
-
+    String[] a;
     Squadra[] squadre;
+    Giornata g;
     private int n;
-    public Classifica(Squadra[] s) {
+    private boolean start;
 
+    public Classifica(Squadra[] s, Giornata c) {
+        a = new String[12];
         squadre = s;
-        for(Squadra a :squadre){
-            System.out.println(a);
-        }
         n = 0;
+        start = false;
+        g = c;
     }
 
     public String[] getClassificaG(int G) {
-        String[] a = new String[12];
 
         for (int i = 0; i < 12; i++) {
-            if(squadre[i] == null) System.out.println("Squadra "+ i +  " e null");
-            else
+            if (squadre[i].getG_fatti()[G] == null) {
+                break;
+            }
             a[i] = "Squadra  " + squadre[i].getids_int() + " " + squadre[i].getG_fatti()[G] + " - " +
                     squadre[squadre[i].getId_array()[G]].getG_fatti()[G] + " Squadra " + squadre[i].getId_array()[G];
-
         }
 
         return a;
@@ -61,14 +62,33 @@ public class Classifica {
         return str;
 
     }
-    public int getNext(){
-        if(n != 11)
-        return n++;
+
+    public int getN() {
         return n;
     }
-    public int getPrev(){
-        if(n != 0)
-        return n--;
+
+    public boolean getS() {
+        return start;
+    }
+
+    public void setS(boolean a) {
+        start = a;
+    }
+
+    public int getNext() {
+        System.out.println("Giornata _: " + g.getn_giornata());
+        if (n != g.getn_giornata() - 1) {
+            n++;
+            return n;
+        }
+        return n;
+    }
+
+    public int getPrev() {
+        if (n != 0) {
+            n--;
+            return n;
+        }
         return n;
     }
 

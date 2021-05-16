@@ -28,11 +28,11 @@ public class Partita implements Runnable {
             g.start_game(s);
             //output("inizio game");
             //simulazione della partita
-            s.setId(g.getid(s));
+            s.setId(g.getid(s), g.getn_giornata());
             //output("Generando ....");
             goal = g.in_game(s);
             //System.out.println("goal:" + goal);
-            s.setG_fatti(goal);
+            s.setG_fatti(goal, g.getn_giornata());
 
             try {
                 Thread.sleep(3000);

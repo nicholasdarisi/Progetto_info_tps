@@ -21,7 +21,7 @@ public class Giornata {
     }
 
     private void darirandom() {
-
+        darisa.clear();
         ArrayList<Integer> random = new ArrayList<Integer>();
         int n;
 
@@ -73,8 +73,7 @@ public class Giornata {
         if (s1 != null && x.getids_int() == s1.getids_int()) {
             System.out.println(s1.getids_int() + " : deleting...");
             s1 = null;
-        }
-        else {
+        } else {
             System.out.println(s2.getids_int() + " : deleting...");
             s2 = null;
         }
@@ -84,6 +83,7 @@ public class Giornata {
         if (count_p == 12) {
             count_p = 0;
             this.x++;
+            darirandom();
         }
 
         if (campolibero == 2) notifyAll();

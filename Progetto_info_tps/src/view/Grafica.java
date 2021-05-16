@@ -25,6 +25,7 @@ public class Grafica extends JFrame {
     private JList list1;
     private JList list;
     private DefaultListModel<String> model;
+    private JScrollPane scrollPane;
 
     public void addController(Controller a) {
         btnNewButton.addActionListener(a);
@@ -73,10 +74,13 @@ public class Grafica extends JFrame {
         }
     }
 
-    public void switchGiorni(String[] a){
-            model.clear();
-            for(String b : a)
+    public void switchGiorni(String[] a) {
+        model.clear();
+        for (String b : a) {
             model.addElement(b);
+        }
+        list.setModel(model);
+        list.updateUI();
     }
 
     public Grafica() {
@@ -175,7 +179,7 @@ public class Grafica extends JFrame {
         panel.add(lblNewLabel);
 
 
-        JScrollPane scrollPane = new JScrollPane();
+        scrollPane = new JScrollPane();
         scrollPane.setBounds(110, 48, 230, 211);
         panel_2.add(scrollPane);
         scrollPane.getViewport().setOpaque(false);
@@ -184,30 +188,12 @@ public class Grafica extends JFrame {
         list.setModel(model);
         scrollPane.setViewportView(list);
 
-        list1 = new JList();
-        list1.setModel(new DefaultListModel() {
-            String[] values = new String[]{"ciao1"};
-
-            public int getSize() {
-                return values.length;
-            }
-
-            public Object getElementAt(int index) {
-                return values[index];
-            }
-        });
-
 
         btnNewButton_3 = new JButton("<--");
         btnNewButton_3.setBounds(6, 121, 92, 29);
         panel_2.add(btnNewButton_3);
 
         btnNewButton_4 = new JButton("-->");
-        btnNewButton_4.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                scrollPane.setViewportView(list1);
-            }
-        });
         btnNewButton_4.setBounds(352, 121, 92, 29);
         panel_2.add(btnNewButton_4);
 
