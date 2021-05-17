@@ -109,7 +109,12 @@ public class Grafica extends JFrame {
     private void initialize() {
         String collum[] = {"Squadra","PG","V","P","S","GF","PUNTI"};
         model = new DefaultListModel<String>();
-        model1 = new DefaultTableModel();
+        model1 = new DefaultTableModel(){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
         table = new JTable();
         for(String a : collum)
         model1.addColumn(a);
