@@ -196,7 +196,7 @@ public class Grafica extends JFrame {
         panel_1.add(lblNewLabel_3);
         
         scrollPane1 = new JScrollPane(table);
-        scrollPane1.setBounds(25, 71, 386, 179);
+        scrollPane1.setBounds(15, 50, 386, 179);
         panel_1.add(scrollPane1);
         table.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
         table.setBackground(new Color(255, 255, 255));
@@ -224,7 +224,7 @@ public class Grafica extends JFrame {
 
         panel.add(btnNewButton_1);
 
-        JLabel lblNewLabel = new JLabel("");
+        JLabel lblNewLabel = new JLabel();
         lblNewLabel.setIcon(new ImageIcon(Grafica.class.getResource("/Resource/1.jpeg")));
         lblNewLabel.setBounds(0, 0, 438, 266);
         panel.add(lblNewLabel);
