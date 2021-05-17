@@ -33,7 +33,7 @@ public class Classifica {
 
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 22; j++) {
-
+                if(squadre[i].getG_fatti()[j] == null) break;
                 if (squadre[i].getG_fatti()[j] > squadre[squadre[i].getId_array()[j]].getG_fatti()[j]) {
                     squadre[i].setVittorie(1);
                     squadre[i].setPunti(3);
@@ -54,7 +54,7 @@ public class Classifica {
 
         for (int i = 0; i < 12; i++) {
 
-            str[i] = "22" + " " + squadre[i].getVittorie() + " " + squadre[i].getPareggi() + " " + squadre[i].getSconfitte()
+            str[i] = " " +squadre[i].gNome()+ g.getn_giornata() + " " + squadre[i].getVittorie() + " " + squadre[i].getPareggi() + " " + squadre[i].getSconfitte()
                     + " " + squadre[i].getGoal_totali() + " " + squadre[i].getG_subiti() + " " + squadre[i].getDiff_reti()
                     + " " + squadre[i].getPunti();
         }

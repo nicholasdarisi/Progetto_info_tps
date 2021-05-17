@@ -30,10 +30,12 @@ public class Grafica extends JFrame {
     private JPanel panel;
     private JPanel panel_1;
     private JPanel panel_2;
-    private JList list1;
     private JList list;
+    private JList list1;
     private DefaultListModel<String> model;
+    private DefaultListModel<String> model1;
     private JScrollPane scrollPane;
+    private JScrollPane scrollPane1;
 
     public void addController(Controller a) {
         btnNewButton.addActionListener(a);
@@ -90,13 +92,21 @@ public class Grafica extends JFrame {
         list.setModel(model);
         list.updateUI();
     }
-
+    public void printC(String[] a){
+        model1.clear();
+        for (String b : a) {
+            model1.addElement(b);
+        }
+        list1.setModel(model1);
+        list1.updateUI();
+    }
     public Grafica() {
         initialize();
     }
 
     private void initialize() {
         model = new DefaultListModel<String>();
+        model1 = new DefaultListModel<String>();
         frame = new JFrame();
         frame.setBounds(100, 100, 430, 286);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -178,23 +188,22 @@ public class Grafica extends JFrame {
         lblNewLabel_23.setBounds(366, 43, 61, 16);
         panel_1.add(lblNewLabel_23);
 
-        Icon imgIcon = new ImageIcon(this.getClass().getResource("/Resource/coriandoli.gif"));
-        
+
         JLabel lblNewLabel_3 = new JLabel("New label");
         lblNewLabel_3.setIcon(new ImageIcon(Grafica.class.getResource("/Resource/coriandoli.gif")));
         lblNewLabel_3.setBounds(25, 71, 386, 179);
         panel_1.add(lblNewLabel_3);
         
-        JScrollPane scrollPane_1 = new JScrollPane();
-        scrollPane_1.setBounds(25, 71, 386, 179);
-        panel_1.add(scrollPane_1);
+        scrollPane1 = new JScrollPane();
+        scrollPane1.setBounds(25, 71, 386, 179);
+        panel_1.add(scrollPane1);
         
-        JList list_1 = new JList();
-        list_1.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
- 
-        list_1.setToolTipText("ciao");
-        list_1.setBackground(new Color(255, 255, 255));
-        scrollPane_1.setViewportView(list_1);
+        list1 = new JList();
+        list1.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+        list1.setToolTipText("ciao");
+        list1.setBackground(new Color(255, 255, 255));
+        list1.setModel(model1);
+        scrollPane1.setViewportView(list1);
         JLabel lblNewLabel_1 = new JLabel(new ImageIcon(Grafica.class.getResource("/Resource/2.jpeg")));
         lblNewLabel_1.setBounds(0, 0, 444, 272);
         panel_1.add(lblNewLabel_1);
@@ -221,14 +230,11 @@ public class Grafica extends JFrame {
         panel.add(lblNewLabel);
 
 
-        JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(89, 47, 251, 194);
         scrollPane = new JScrollPane();
-        scrollPane.setBounds(89, 48, 251, 211);
+        scrollPane.setBounds(89, 47, 251, 194);
         panel_2.add(scrollPane);
         scrollPane.getViewport().setOpaque(false);
 
-        JList list1 = new JList();
         list = new JList();
         list.setModel(model);
         scrollPane.setViewportView(list);
