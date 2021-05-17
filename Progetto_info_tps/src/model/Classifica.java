@@ -32,8 +32,7 @@ public class Classifica {
 
     public String[] Stampa_classifica() {
         String[] str = new String[12];
-        int max = squadre[0].getPunti();
-        Squadra sq []= new Squadra[12];
+
 
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 22; j++) {
@@ -55,24 +54,30 @@ public class Classifica {
             }
         }
 
-        for (int i = 0; i <12; i++) {
-        	sq[i] = squadre[i];
-        }
 
-        for (int i = 0; i < 12; i++) {
-        	int k=i;
-        	for (int j = k+1; j < 12; j++) {
-        	if (sq[j].getPunti()>sq[k].getPunti()) {
-        		k = j;
-        		
-        	}
-        	}
-            str[i] = " \t\t\t\t" +squadre[k].gNome()+ " \t\t\t\t" +g.getn_giornata() + " \t\t\t\t" + squadre[k].getVittorie() + " \t\t\t\t" + squadre[k].getPareggi() + " \t\t\t\t" + squadre[k].getSconfitte()
-                    + " \t\t\t\t" + squadre[k].getGoal_totali() 
-                    + " \t\t\t\t" + squadre[k].getPunti();
-        
+
+        int a[] = new int[12];
+        for(int i = 0 ; i < 12 ; i++){
+            a[i] = i;
         }
-   
+        boolean reorder = false;
+        while(!reorder){
+            reorder = true;
+            for(int i = 0 ; i < 11 ; i++){
+                    if(squadre[a[i]].getPunti() < squadre[a[i + 1]].getPunti() ){
+                        int temp = a[i + 1];
+                        a[i + 1] = a[i];
+                        a[i] = temp;
+                        reorder = false;
+                    }
+            }
+        }
+        for (int i = 0; i < 12; i++) {
+            str[i] = " \t\t\t\t" +squadre[a[i]].gNome()+ " \t\t\t\t" +g.getn_giornata() + " \t\t\t\t" + squadre[a[i]].getVittorie() + " \t\t\t\t" + squadre[a[i]].getPareggi() + " \t\t\t\t" + squadre[a[i]].getSconfitte()
+                    + " \t\t\t\t" + squadre[a[i]].getGoal_totali()
+                    + " \t\t\t\t" + squadre[a[i]].getPunti();
+
+        }
         return str;
 
     }
