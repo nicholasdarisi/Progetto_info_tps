@@ -157,7 +157,6 @@ public class Grafica extends JFrame {
         JLabel lblNewLabel_1 = new JLabel(imgIcon);
         lblNewLabel_1.setBounds(0, 0, 438, 266);
         panel_1.add(lblNewLabel_1);
-
         panel_2 = new JPanel();
         frame.getContentPane().add(panel_2, "name_1263126193526326");
         panel_2.setLayout(null);
