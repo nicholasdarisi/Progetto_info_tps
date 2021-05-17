@@ -13,7 +13,8 @@ public class Main {
         Partita p[] = new Partita[12];
         Giornata g = new Giornata(0, 22);
         String m[] = {
-                "milan"
+                "milan", "inter", "manchester city", "manchester united", "juve", "real madrid", "psg", "barcellona", "atletico madrid", "bayern monaco",
+                "cina", "chelsea"
         };
         for (int i = 0; i < 12; i++) {
             s[i] = new Squadra(ThreadLocalRandom.current().nextInt(2, 6), i,m[i]);

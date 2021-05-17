@@ -20,6 +20,7 @@ public class Giornata {
         this.darirandom();
     }
 
+    
     private void darirandom() {
         darisa.clear();
         ArrayList<Integer> random = new ArrayList<Integer>();

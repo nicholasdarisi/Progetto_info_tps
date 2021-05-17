@@ -21,8 +21,8 @@ public class Classifica {
             if (squadre[i].getG_fatti()[G] == null) {
                 break;
             }
-            a[i] = "Squadra  " + squadre[i].gNome() + " " + squadre[i].getG_fatti()[G] + " - " +
-                    squadre[squadre[i].getId_array()[G]].getG_fatti()[G] + " Squadra " + squadre[squadre[i].getId_array()[G]].gNome();
+            a[i] = squadre[i].gNome() + " " + squadre[i].getG_fatti()[G] + " - " +
+                    squadre[squadre[i].getId_array()[G]].getG_fatti()[G] + " " + squadre[squadre[i].getId_array()[G]].gNome();
         }
 
         return a;

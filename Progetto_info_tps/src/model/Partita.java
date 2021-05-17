@@ -35,7 +35,7 @@ public class Partita implements Runnable {
             s.setG_fatti(goal, g.getn_giornata());
 
             try {
-                Thread.sleep(3000);
+                Thread.sleep(200);
             } catch (InterruptedException e) {
             }
 
