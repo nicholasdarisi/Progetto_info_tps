@@ -129,10 +129,10 @@ public class Squadra {
     }
 
     public int getGoal_totali() {
-        int i = 0;
-        while (this.g_fatti[i] != null) {
+        for (int i = 0; i<22; i++) {
+        	if (g_fatti[i] == null) break;
             g += g_fatti[i];
-            i++;
+ 
         }
 
         return g;

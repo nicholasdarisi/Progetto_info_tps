@@ -95,13 +95,6 @@ public class Giornata {
 
     }
 
-    public int vittoria(Squadra x) {
-
-        return x.get_intgoal();
-
-    }
-
-
     public synchronized int getn_giornata() {
         return x;
     }

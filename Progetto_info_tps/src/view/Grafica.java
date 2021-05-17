@@ -173,19 +173,9 @@ public class Grafica extends JFrame {
         lblNewLabel_20.setBounds(251, 43, 23, 16);
         panel_1.add(lblNewLabel_20);
 
-        JLabel lblNewLabel_21 = new JLabel("GS");
-        lblNewLabel_21.setForeground(new Color(255, 255, 255));
-        lblNewLabel_21.setBounds(286, 43, 23, 16);
-        panel_1.add(lblNewLabel_21);
-
-        JLabel lblNewLabel_22 = new JLabel("+/-");
-        lblNewLabel_22.setForeground(new Color(255, 255, 255));
-        lblNewLabel_22.setBounds(327, 43, 30, 16);
-        panel_1.add(lblNewLabel_22);
-
         JLabel lblNewLabel_23 = new JLabel("Punti");
         lblNewLabel_23.setForeground(new Color(255, 255, 255));
-        lblNewLabel_23.setBounds(366, 43, 61, 16);
+        lblNewLabel_23.setBounds(280, 43, 61, 16);
         panel_1.add(lblNewLabel_23);
 
 

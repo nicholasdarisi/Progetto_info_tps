@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Classifica {
     String[] a;
     Squadra[] squadre;
@@ -30,6 +32,8 @@ public class Classifica {
 
     public String[] Stampa_classifica() {
         String[] str = new String[12];
+        int max = squadre[0].getPunti();
+        Squadra sq []= new Squadra[12];
 
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 22; j++) {
@@ -37,28 +41,38 @@ public class Classifica {
                 if (squadre[i].getG_fatti()[j] > squadre[squadre[i].getId_array()[j]].getG_fatti()[j]) {
                     squadre[i].setVittorie(1);
                     squadre[i].setPunti(3);
-                    squadre[i].setSconfitte(1);
+                    //squadre[i].setSconfitte(1);
                 } else if (squadre[i].getG_fatti()[j] == squadre[squadre[i].getId_array()[j]].getG_fatti()[j]) {
                     squadre[i].setPareggi(1);
                     squadre[i].setPunti(1);
-                    squadre[i].setPareggi(1);
-                    squadre[i].setPunti(1);
+                    //squadre[i].setPareggi(1);
+                    //squadre[i].setPunti(1);
                 } else if (squadre[i].getG_fatti()[j] < squadre[squadre[i].getId_array()[j]].getG_fatti()[j]) {
-                    squadre[i].setVittorie(1);
-                    squadre[i].setPunti(3);
+                    //squadre[i].setVittorie(1);
                     squadre[i].setSconfitte(1);
+                    squadre[i].setPunti(0);
                 }
             }
         }
 
-
-        for (int i = 0; i < 12; i++) {
-
-            str[i] = " " +squadre[i].gNome()+ " " +g.getn_giornata() + " " + squadre[i].getVittorie() + " " + squadre[i].getPareggi() + " " + squadre[i].getSconfitte()
-                    + " " + squadre[i].getGoal_totali() + " " + squadre[i].getG_subiti() + " " + squadre[i].getDiff_reti()
-                    + " " + squadre[i].getPunti();
+        for (int i = 0; i <12; i++) {
+        	sq[i] = squadre[i];
         }
 
+        for (int i = 0; i < 12; i++) {
+        	int k=i;
+        	for (int j = k+1; j < 12; j++) {
+        	if (sq[j].getPunti()>sq[k].getPunti()) {
+        		k = j;
+        		
+        	}
+        	}
+            str[i] = " \t\t\t\t" +squadre[k].gNome()+ " \t\t\t\t" +g.getn_giornata() + " \t\t\t\t" + squadre[k].getVittorie() + " \t\t\t\t" + squadre[k].getPareggi() + " \t\t\t\t" + squadre[k].getSconfitte()
+                    + " \t\t\t\t" + squadre[k].getGoal_totali() 
+                    + " \t\t\t\t" + squadre[k].getPunti();
+        
+        }
+   
         return str;
 
     }
