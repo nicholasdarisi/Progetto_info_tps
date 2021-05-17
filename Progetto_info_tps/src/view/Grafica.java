@@ -98,7 +98,7 @@ public class Grafica extends JFrame {
     private void initialize() {
         model = new DefaultListModel<String>();
         frame = new JFrame();
-        frame.setBounds(100, 100, 429, 286);
+        frame.setBounds(100, 100, 430, 286);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.getContentPane().setLayout(new CardLayout(0, 0));
@@ -115,8 +115,8 @@ public class Grafica extends JFrame {
 
         btnNewButton = new JButton("Classifica");
 
-        btnNewButton.setBounds(293, 234, 130, 29);
-        btnNewButton.setBounds(249, 230, 130, 29);
+        btnNewButton.setBounds(211, 179, 92, 29);
+    
         panel.add(btnNewButton);
 
         JLabel lblNewLabel_14 = new JLabel("Classifica");
@@ -130,7 +130,7 @@ public class Grafica extends JFrame {
 
         btnNewButton_2.setBounds(310, 3, 117, 29);
 
-        btnNewButton_2.setBounds(327, 6, 117, 29);
+
         panel_1.add(btnNewButton_2);
 
         JLabel lblNewLabel_15 = new JLabel("Squadra");
@@ -206,14 +206,13 @@ public class Grafica extends JFrame {
         JLabel lblNewLabel_26 = new JLabel("Simulazione partite");
         lblNewLabel_26.setForeground(new Color(255, 255, 255));
         lblNewLabel_26.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_26.setBounds(146, 6, 143, 16);
+        lblNewLabel_26.setBounds(146, 6, 135, 16);
         panel_2.add(lblNewLabel_26);
 
-        btnNewButton_1 = new JButton("Simula incontri");
+        btnNewButton_1 = new JButton("Simula");
 
-        btnNewButton_1.setBounds(6, 234, 130, 29);
+        btnNewButton_1.setBounds(136, 179, 72, 29);
 
-        btnNewButton_1.setBounds(249, 206, 130, 29);
         panel.add(btnNewButton_1);
 
         JLabel lblNewLabel = new JLabel("");
@@ -225,7 +224,7 @@ public class Grafica extends JFrame {
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(89, 47, 251, 194);
         scrollPane = new JScrollPane();
-        scrollPane.setBounds(110, 48, 230, 211);
+        scrollPane.setBounds(89, 48, 251, 211);
         panel_2.add(scrollPane);
         scrollPane.getViewport().setOpaque(false);
 
@@ -241,18 +240,15 @@ public class Grafica extends JFrame {
 
         btnNewButton_4 = new JButton("-->");
 
-        btnNewButton_4.setBounds(352, 121, 60, 29);
+        btnNewButton_4.setBounds(352, 121, 71, 29);
 
-        btnNewButton_4.setBounds(352, 121, 92, 29);
 
         panel_2.add(btnNewButton_4);
 
         btnNewButton_5 = new JButton("Back");
 
-        btnNewButton_5.setBounds(327, 7, 71, 29);
+        btnNewButton_5.setBounds(301, 1, 122, 29);
 
-
-        btnNewButton_5.setBounds(327, 7, 117, 29);
 
         panel_2.add(btnNewButton_5);
         
