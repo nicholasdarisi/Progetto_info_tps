@@ -26,22 +26,22 @@ public class Partita implements Runnable {
         while (g.getn_giornata() < 22) {
             //inizio partita
             g.start_game(s);
-            output("inizio game");
+            //output("inizio game");
             //simulazione della partita
-            s.setId(g.getid(s));
-            output("Generando ....");
+            s.setId(g.getid(s), g.getn_giornata());
+            //output("Generando ....");
             goal = g.in_game(s);
-            System.out.println("goal:" + goal);
-            s.setG_fatti(goal);
+            //System.out.println("goal:" + goal);
+            s.setG_fatti(goal, g.getn_giornata());
 
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
             }
 
-            output("game in corso");
+            //output("game in corso");
             g.out_game(s);
-            output("fine game");
+            //output("fine game");
 
         }
 
