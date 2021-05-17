@@ -13,6 +13,9 @@ public class Main {
         Squadra s[] = new Squadra[12];
         Partita p[] = new Partita[12];
         Giornata g = new Giornata(0, 22);
+        Grafica window = new Grafica();
+        DayControll d = new DayControll(g,window);
+        Thread day = new Thread(d);
         String m[] = {
                 "milan ", 
                 "inter  ",
@@ -36,8 +39,8 @@ public class Main {
             p[i] = new Partita(g, s[i]);
             t[i] = new Thread(p[i]);
         }
-        Grafica window = new Grafica();
-        window.addController(new Controller(window, c, t,str));
+
+        window.addController(new Controller(window, c, t,str,day));
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {

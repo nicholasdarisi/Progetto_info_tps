@@ -18,11 +18,13 @@ public class Controller implements ActionListener {
     Classifica c;
     Thread[] a;
     String[][] str;
-    public Controller(Grafica a, Classifica c, Thread[] b,String[][] str ) {
+    Thread day;
+    public Controller(Grafica a, Classifica c, Thread[] b,String[][] str ,Thread day) {
         view = a;
         this.c = c;
         this.a = b;
         this.str = str;
+        this.day = day;
     }
 
 
@@ -38,6 +40,7 @@ public class Controller implements ActionListener {
                 for (Thread a : this.a) {
                     a.start();
                 }
+                day.start();
                 c.setS(true);
             }
             try {

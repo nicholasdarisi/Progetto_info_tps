@@ -35,7 +35,7 @@ public class Grafica extends JFrame {
     private DefaultTableModel model1;
     private JScrollPane scrollPane;
     private JScrollPane scrollPane1;
-
+    private JLabel lblNewLabel_4;
     public void addController(Controller a) {
         btnNewButton.addActionListener(a);
         btnNewButton_1.addActionListener(a);
@@ -62,7 +62,9 @@ public class Grafica extends JFrame {
         }
         return null;
     }
-
+    public void setGiorno(String g){
+        lblNewLabel_4.setText(g);
+    }
     public void switchPanel(int type) {
         switch (type) {
             case 0:
@@ -121,23 +123,18 @@ public class Grafica extends JFrame {
         frame = new JFrame();
         frame.setBounds(100, 100, 430, 286);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         frame.getContentPane().setLayout(new CardLayout(0, 0));
         frame.setResizable(false);
         panel = new JPanel();
         frame.getContentPane().add(panel, "name_1193192040720394");
         panel.setLayout(null);
-
         panel_1 = new JPanel();
         panel_1.setBackground(new Color(255, 255, 255));
         panel_1 = new JPanel();
         frame.getContentPane().add(panel_1, "name_1263115913667607");
         panel_1.setLayout(null);
-
         btnNewButton = new JButton("Classifica");
-
         btnNewButton.setBounds(211, 179, 92, 29);
-    
         panel.add(btnNewButton);
 
         JLabel lblNewLabel_14 = new JLabel("Classifica");
@@ -146,48 +143,10 @@ public class Grafica extends JFrame {
         lblNewLabel_14.setBackground(new Color(255, 255, 255));
         lblNewLabel_14.setBounds(165, 6, 81, 16);
         panel_1.add(lblNewLabel_14);
-
         btnNewButton_2 = new JButton("Back");
-
         btnNewButton_2.setBounds(310, 3, 117, 29);
-
-
         panel_1.add(btnNewButton_2);
 
-//        JLabel lblNewLabel_15 = new JLabel("Squadra");
-//        lblNewLabel_15.setForeground(new Color(255, 255, 255));
-//        lblNewLabel_15.setBounds(25, 43, 61, 16);
-//        panel_1.add(lblNewLabel_15);
-//
-//        JLabel lblNewLabel_16 = new JLabel("PG");
-//        lblNewLabel_16.setForeground(new Color(255, 255, 255));
-//        lblNewLabel_16.setBounds(124, 43, 16, 16);
-//        panel_1.add(lblNewLabel_16);
-//
-//        JLabel lblNewLabel_17 = new JLabel("V");
-//        lblNewLabel_17.setForeground(new Color(255, 255, 255));
-//        lblNewLabel_17.setBounds(165, 43, 8, 16);
-//        panel_1.add(lblNewLabel_17);
-//
-//        JLabel lblNewLabel_18 = new JLabel("P");
-//        lblNewLabel_18.setForeground(new Color(255, 255, 255));
-//        lblNewLabel_18.setBounds(195, 43, 16, 16);
-//        panel_1.add(lblNewLabel_18);
-//
-//        JLabel lblNewLabel_19 = new JLabel("S");
-//        lblNewLabel_19.setForeground(new Color(255, 255, 255));
-//        lblNewLabel_19.setBounds(223, 43, 16, 16);
-//        panel_1.add(lblNewLabel_19);
-//
-//        JLabel lblNewLabel_20 = new JLabel("GF");
-//        lblNewLabel_20.setForeground(new Color(255, 255, 255));
-//        lblNewLabel_20.setBounds(251, 43, 23, 16);
-//        panel_1.add(lblNewLabel_20);
-//
-//        JLabel lblNewLabel_23 = new JLabel("Punti");
-//        lblNewLabel_23.setForeground(new Color(255, 255, 255));
-//        lblNewLabel_23.setBounds(280, 43, 61, 16);
-//        panel_1.add(lblNewLabel_23);
 
 
         JLabel lblNewLabel_3 = new JLabel("New label");
@@ -245,17 +204,11 @@ public class Grafica extends JFrame {
         panel_2.add(btnNewButton_3);
 
         btnNewButton_4 = new JButton("-->");
-
         btnNewButton_4.setBounds(352, 121, 71, 29);
-
-
         panel_2.add(btnNewButton_4);
 
         btnNewButton_5 = new JButton("Back");
-
         btnNewButton_5.setBounds(301, 1, 122, 29);
-
-
         panel_2.add(btnNewButton_5);
         
         JLabel lblNewLabel_5 = new JLabel("Giornata in corso:\n");
@@ -263,7 +216,7 @@ public class Grafica extends JFrame {
         lblNewLabel_5.setBounds(106, 34, 117, 16);
         panel_2.add(lblNewLabel_5);
         
-        JLabel lblNewLabel_4 = new JLabel("");
+        lblNewLabel_4 = new JLabel();
         lblNewLabel_4.setForeground(new Color(255, 255, 255));
         lblNewLabel_4.setBounds(224, 34, 47, 16);
         panel_2.add(lblNewLabel_4);
