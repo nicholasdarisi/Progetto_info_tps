@@ -16,7 +16,7 @@ public class Main {
                 "milan"
         };
         for (int i = 0; i < 12; i++) {
-            s[i] = new Squadra(ThreadLocalRandom.current().nextInt(2, 6), i);
+            s[i] = new Squadra(ThreadLocalRandom.current().nextInt(2, 6), i,m[i]);
         }
         Classifica c = new Classifica(s, g);
         Thread t[] = new Thread[12];
