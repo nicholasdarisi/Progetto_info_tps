@@ -24,7 +24,7 @@ public class Squadra {
 		g_subiti = 0;
 		diff_reti = 0;
 		punti = 0;
-		id = new Integer [22];
+		id = new Integer [23];
 		this.potenza = potenza;
 		this.ids = ids;
 		this.nome = nome;
