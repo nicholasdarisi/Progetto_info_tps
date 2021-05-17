@@ -101,9 +101,6 @@ public class Giornata {
 
     }
 
-    public int getCampo() {
-        return campolibero;
-    }
 
     public int getn_giornata() {
         return x;

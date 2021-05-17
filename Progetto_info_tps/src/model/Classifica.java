@@ -37,15 +37,15 @@ public class Classifica {
                 if (squadre[i].getG_fatti()[j] > squadre[squadre[i].getId_array()[j]].getG_fatti()[j]) {
                     squadre[i].setVittorie(1);
                     squadre[i].setPunti(3);
-                    squadre[j].setSconfitte(1);
+                    squadre[i].setSconfitte(1);
                 } else if (squadre[i].getG_fatti()[j] == squadre[squadre[i].getId_array()[j]].getG_fatti()[j]) {
                     squadre[i].setPareggi(1);
                     squadre[i].setPunti(1);
-                    squadre[j].setPareggi(1);
-                    squadre[j].setPunti(1);
+                    squadre[i].setPareggi(1);
+                    squadre[i].setPunti(1);
                 } else if (squadre[i].getG_fatti()[j] < squadre[squadre[i].getId_array()[j]].getG_fatti()[j]) {
-                    squadre[j].setVittorie(1);
-                    squadre[j].setPunti(3);
+                    squadre[i].setVittorie(1);
+                    squadre[i].setPunti(3);
                     squadre[i].setSconfitte(1);
                 }
             }
