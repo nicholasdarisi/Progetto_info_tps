@@ -1,33 +1,33 @@
 package model;
 
 public class Squadra {
-
-    private int vittorie;
-    private int pareggi;
-    private int sconfitte;
-    private Integer g_fatti[];
-    private int g_subiti;
-    private int diff_reti;
-    private int punti;
-    private Integer id[];
-    private int potenza;
-    private int ids;
-    int g;
-
-    public Squadra(int potenza, int ids) {
-        // TODO Auto-generated constructor stub
-        vittorie = 0;
-        pareggi = 0;
-        sconfitte = 0;
-        g_fatti = new Integer[22];
-        g_subiti = 0;
-        diff_reti = 0;
-        punti = 0;
-        id = new Integer[22];
-        this.potenza = potenza;
-        this.ids = ids;
-
-    }
+	
+	private int vittorie;
+	private int pareggi;
+	private int sconfitte;
+	private Integer g_fatti[];
+	private int g_subiti;
+	private int diff_reti;
+	private int punti;
+	private Integer id [];
+	private int potenza;
+	private int ids;
+	int g;
+	
+	public Squadra(int potenza, int ids) {
+		// TODO Auto-generated constructor stub
+		vittorie = 0;
+		pareggi = 0;
+		sconfitte = 0;
+		g_fatti = new Integer [23];
+		g_subiti = 0;
+		diff_reti = 0;
+		punti = 0;
+		id = new Integer [22];
+		this.potenza = potenza;
+		this.ids = ids;
+		
+	}
 
     public int getVittorie() {
         return vittorie;
@@ -45,6 +45,14 @@ public class Squadra {
         this.pareggi += pareggi;
     }
 
+	public void setG_fatti(int goal) {
+		int i = 0;
+		
+		while(this.g_fatti[i] != null) {
+			i++;
+		}
+		g_fatti[i] = goal;
+	}
     public int getSconfitte() {
         return sconfitte;
     }

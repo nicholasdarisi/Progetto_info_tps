@@ -5,7 +5,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import controller.Controller;
 import model.*;
-import org.testng.annotations.Test;
 import view.Grafica;
 
 public class Main {
