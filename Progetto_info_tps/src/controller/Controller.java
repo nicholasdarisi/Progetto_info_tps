@@ -29,6 +29,7 @@ public class Controller implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == view.getButton(0)) {
             view.switchPanel(0);
+            view.printC(c.Stampa_classifica());
         }
         if (e.getSource() == view.getButton(1)) {
             view.switchPanel(2);
@@ -55,5 +56,6 @@ public class Controller implements ActionListener {
         if (e.getSource() == view.getButton(3)) {
             view.switchGiorni(c.getClassificaG(c.getPrev()));
         }
+
     }
 }
