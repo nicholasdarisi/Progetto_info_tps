@@ -9,17 +9,29 @@ public class Partita implements Runnable {
     private Squadra s;
     private int goal;
 
-
+    /**
+     * Serve per istanziare Partita
+     * @param x
+     * @param y
+     */
     public Partita(Giornata x, Squadra y) {
         // TODO Auto-generated constructor stub
         g = x;
         s = y;
     }
 
+    /**
+     * OutPut di un messaggio
+     * @param message
+     */
     private void output(String message) {
         System.out.println("Partita >>> " + message);
     }
 
+
+    /**
+     * Simula un ciclo della partita , quindi , entrata , giocata , uscita di una squadra
+     */
     @Override
     public void run() {
         // TODO Auto-generated method stub

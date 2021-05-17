@@ -36,6 +36,11 @@ public class Grafica extends JFrame {
     private JScrollPane scrollPane;
     private JScrollPane scrollPane1;
     private JLabel lblNewLabel_4;
+
+    /**
+     * Aggiunta dell ' ActionListener ai bottoni
+     * @param a
+     */
     public void addController(Controller a) {
         btnNewButton.addActionListener(a);
         btnNewButton_1.addActionListener(a);
@@ -45,6 +50,11 @@ public class Grafica extends JFrame {
         btnNewButton_5.addActionListener(a);
     }
 
+    /**
+     * Restituisce un specifico bottone
+     * @param type
+     * @return JButton
+     */
     public JButton getButton(int type) {
         switch (type) {
             case 0:
@@ -62,9 +72,19 @@ public class Grafica extends JFrame {
         }
         return null;
     }
+
+    /**
+     * Serve per settare lo stato di Giorno in corso
+     * @param g
+     */
     public void setGiorno(String g){
         lblNewLabel_4.setText(g);
     }
+
+    /**
+     * Serve per cambiare pannelli
+     * @param type
+     */
     public void switchPanel(int type) {
         switch (type) {
             case 0:
@@ -85,6 +105,10 @@ public class Grafica extends JFrame {
         }
     }
 
+    /**
+     * Serve per rinserire gli elementi aggiornati nella list nel Simulazione Partita
+     * @param a
+     */
     public void switchGiorni(String[] a) {
         model.clear();
         for (String b : a) {
@@ -94,6 +118,11 @@ public class Grafica extends JFrame {
         list.updateUI();
     }
 
+
+    /**
+     * Serve per aggiungere righe nella tabella Classifica
+     * @param a
+     */
     public void addRow(String a[][]){
         for(int i = 0 ,max = model1.getRowCount(); i< max ;i++){
             model1.removeRow(0);
@@ -215,7 +244,9 @@ public class Grafica extends JFrame {
         lblNewLabel_5.setForeground(new Color(255, 255, 255));
         lblNewLabel_5.setBounds(106, 34, 117, 16);
         panel_2.add(lblNewLabel_5);
-        
+
+
+
         lblNewLabel_4 = new JLabel();
         lblNewLabel_4.setForeground(new Color(255, 255, 255));
         lblNewLabel_4.setBounds(224, 34, 47, 16);

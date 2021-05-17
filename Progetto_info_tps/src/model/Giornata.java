@@ -13,6 +13,11 @@ public class Giornata {
     private int count_p;
     private ArrayList<Integer> darisa = new ArrayList<Integer>();
 
+    /**
+     * Serve per istanziare Giornata, monitor per le partite
+     * @param n
+     * @param max
+     */
     public Giornata(int n, int max) {
         // TODO Auto-generated constructor stub
         x = n;
@@ -20,7 +25,9 @@ public class Giornata {
         this.darirandom();
     }
 
-
+    /**
+     * Serve per randomizare gli incontri tra squadre
+     */
     private void darirandom() {
         darisa.clear();
         ArrayList<Integer> random = new ArrayList<Integer>();
@@ -40,12 +47,22 @@ public class Giornata {
 
     }
 
+
+    /**
+     * Serve per sapare se e il turno di certe squadre o no
+     * @param x
+     * @return
+     */
     public boolean check(Squadra x) {
         if (campolibero == 0 || x.getids_int() != darisa.get(count_p) && x.getids_int() != darisa.get(count_p + 1))
             return true;
         return false;
     }
 
+    /**
+     * Gestisce gli start delle partite
+     * @param x
+     */
     public synchronized void start_game(Squadra x) {
         while (check(x)) {
             try {
@@ -62,12 +79,21 @@ public class Giornata {
 
     }
 
+    /**
+     * Simula la giocata della partita
+     * @param x
+     * @return int
+     */
     public synchronized int in_game(Squadra x) {
 
         return ThreadLocalRandom.current().nextInt(1, x.getPotenza());
 
     }
 
+    /**
+     * Simula uscita delle partite
+     * @param x
+     */
     public synchronized void out_game(Squadra x) {
         campolibero++;
         if (s1 != null && x.getids_int() == s1.getids_int()) {
@@ -97,12 +123,19 @@ public class Giornata {
 
     }
 
-
+    /**
+     * Serve per sapere il giorno attuale
+     * @return
+     */
     public synchronized int getn_giornata() {
         return x;
     }
 
-
+    /**
+     * Serve per salvare id della squadra aversaria
+     * @param x
+     * @return int
+     */
     public synchronized int getid(Squadra x) {
 
         while (s2 == null) {

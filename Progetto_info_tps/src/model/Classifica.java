@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Vector;
 
 public class Classifica {
     String[] a;
@@ -10,6 +8,11 @@ public class Classifica {
     private int n;
     private boolean start;
 
+    /**
+     * Costruttore per Classifica , Serve un array di Squadra e Giornata
+     * @param s
+     * @param c
+     */
     public Classifica(Squadra[] s, Giornata c) {
         a = new String[12];
         squadre = s;
@@ -18,6 +21,11 @@ public class Classifica {
         g = c;
     }
 
+    /**
+     * Per prendere informazioni di un specifico giorno
+     * @param G
+     * @return String[]
+     */
     public String[] getClassificaG(int G) {
 
         for (int i = 0; i < 12; i++) {
@@ -31,6 +39,11 @@ public class Classifica {
         return a;
     }
 
+    /**
+     * Serve per costruire la tabella finale per Classifica
+     * @param str
+     * @return String[][]
+     */
     public String[][] Stampa_classifica(String[][] str) {
         for (int i = 0; i < 12; i++) {
             for (int j = squadre[i].getCount_G(); j < 22; j++) {
@@ -81,15 +94,26 @@ public class Classifica {
         return str;
     }
 
-
+    /**
+     * Serve per dirci se la simulazione e mai commminciata o no
+     * @return boolean
+     */
     public boolean getS() {
         return start;
     }
 
+    /**
+     * Serve per settare lo stato di commincia simulazione
+     * @param a
+     */
     public void setS(boolean a) {
         start = a;
     }
 
+    /**
+     *Serve per passare al giorno successivo , se possibile
+     * @return int
+     */
     public int getNext() {
         System.out.println("Giornata _: " + g.getn_giornata());
         if (n != g.getn_giornata() - 1) {
@@ -99,6 +123,10 @@ public class Classifica {
         return n;
     }
 
+    /**
+     * Serve per passare al giorno precedente , se possibile
+     * @return int
+     */
     public int getPrev() {
         if (n != 0) {
             n--;
