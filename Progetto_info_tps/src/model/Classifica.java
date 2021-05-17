@@ -34,7 +34,7 @@ public class Classifica {
     public String[][] Stampa_classifica(String[][] str) {
         for (int i = 0; i < 12; i++) {
             for (int j = squadre[i].getCount_G(); j < 22; j++) {
-                if (squadre[i].getG_fatti()[j] == null) break;
+                if (squadre[i].getG_fatti()[j] == null || squadre[squadre[i].getId_array()[j]].getG_fatti()[j] == null) break;
                 if (squadre[i].getG_fatti()[j] > squadre[squadre[i].getId_array()[j]].getG_fatti()[j]) {
                     squadre[i].setVittorie(1);
                     squadre[i].setPunti(3);
@@ -81,9 +81,6 @@ public class Classifica {
         return str;
     }
 
-    public int getN() {
-        return n;
-    }
 
     public boolean getS() {
         return start;

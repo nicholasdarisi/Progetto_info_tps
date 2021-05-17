@@ -20,7 +20,7 @@ public class Giornata {
         this.darirandom();
     }
 
-    
+
     private void darirandom() {
         darisa.clear();
         ArrayList<Integer> random = new ArrayList<Integer>();
@@ -62,7 +62,7 @@ public class Giornata {
 
     }
 
-    public int in_game(Squadra x) {
+    public synchronized int in_game(Squadra x) {
 
         return ThreadLocalRandom.current().nextInt(1, x.getPotenza());
 
@@ -87,13 +87,16 @@ public class Giornata {
         }
 
         if (campolibero == 2) notifyAll();
-        try {
-            wait(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if (!(count_p == 0 && (x.getids_int() == darisa.get(count_p) || x.getids_int() == darisa.get(count_p + 1)))) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
     }
+
 
     public synchronized int getn_giornata() {
         return x;
