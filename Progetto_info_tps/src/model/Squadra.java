@@ -13,8 +13,9 @@ public class Squadra {
 	private int potenza;
 	private int ids;
 	int g;
+	private String nome;
 	
-	public Squadra(int potenza, int ids) {
+	public Squadra(int potenza, int ids, String nome) {
 		// TODO Auto-generated constructor stub
 		vittorie = 0;
 		pareggi = 0;
@@ -26,7 +27,7 @@ public class Squadra {
 		id = new Integer [22];
 		this.potenza = potenza;
 		this.ids = ids;
-		
+		this.nome = nome;
 	}
 
     public int getVittorie() {
@@ -44,7 +45,9 @@ public class Squadra {
     public void setPareggi(int pareggi) {
         this.pareggi += pareggi;
     }
-
+    public String gNome(){
+	    return nome;
+    }
 	public void setG_fatti(int goal) {
 		int i = 0;
 		
@@ -145,10 +148,5 @@ public class Squadra {
     public int getPotenza() {
         return potenza;
     }
-
-    public void setPotenza(int potenza) {
-        this.potenza = potenza;
-    }
-
 
 }
