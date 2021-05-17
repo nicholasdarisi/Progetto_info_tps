@@ -7,14 +7,13 @@ public class Squadra {
 	private int sconfitte;
 	private Integer g_fatti[];
 	private int g_subiti;
-	private int diff_reti;
 	private int punti;
 	private Integer id [];
 	private int potenza;
 	private int ids;
 	int g;
 	private String nome;
-	
+	private int count_G;
 	public Squadra(int potenza, int ids, String nome) {
 		// TODO Auto-generated constructor stub
 		vittorie = 0;
@@ -22,14 +21,19 @@ public class Squadra {
 		sconfitte = 0;
 		g_fatti = new Integer [23];
 		g_subiti = 0;
-		diff_reti = 0;
+		count_G = 0;
 		punti = 0;
 		id = new Integer [23];
 		this.potenza = potenza;
 		this.ids = ids;
 		this.nome = nome;
 	}
-
+    public int getCount_G(){
+	    return count_G;
+    }
+    public void addCount_G(){
+	    count_G++;
+    }
     public int getVittorie() {
         return vittorie;
     }
@@ -68,26 +72,6 @@ public class Squadra {
         return g_fatti;
     }
 
-    public int get_intgoal() {
-        int i = 0;
-        int goal = 0;
-
-        while (this.g_fatti[i] != null) {
-            if (i == 19) {
-                goal = g_fatti[i];
-                return goal;
-
-            }
-            i++;
-        }
-
-        if (i > 0) {
-            goal = g_fatti[i - 1];
-        }
-
-        return goal;
-
-    }
 
     public void setG_fatti(int goal, int i) {
         g_fatti[i] = goal;
@@ -105,19 +89,6 @@ public class Squadra {
 
     public void setId(int id_, int i) {
         id[i] = id_;
-    }
-
-    public int getG_subiti() {
-        return g_subiti;
-    }
-
-    public void setG_subiti(int g_subiti) {
-        this.g_subiti += g_subiti;
-    }
-
-
-    public void setDiff_reti(int diff_reti) {
-        this.diff_reti += diff_reti;
     }
 
     public int getPunti() {

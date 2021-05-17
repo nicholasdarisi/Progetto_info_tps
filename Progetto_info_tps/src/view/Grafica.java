@@ -2,21 +2,20 @@ package view;
 
 import controller.Controller;
 
-import java.awt.EventQueue;
+import java.awt.*;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 
-import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import java.awt.Color;
-import java.awt.Font;
+import javax.swing.table.DefaultTableModel;
+import java.util.Vector;
 
 public class Grafica extends JFrame {
 
@@ -31,9 +30,9 @@ public class Grafica extends JFrame {
     private JPanel panel_1;
     private JPanel panel_2;
     private JList list;
-    private JList list1;
+    private JTable table;
     private DefaultListModel<String> model;
-    private DefaultListModel<String> model1;
+    private DefaultTableModel model1;
     private JScrollPane scrollPane;
     private JScrollPane scrollPane1;
 
@@ -92,21 +91,28 @@ public class Grafica extends JFrame {
         list.setModel(model);
         list.updateUI();
     }
-    public void printC(String[] a){
-        model1.clear();
-        for (String b : a) {
-            model1.addElement(b);
+
+    public void addRow(String a[][]){
+        for(int i = 0 ,max = model1.getRowCount(); i< max ;i++){
+            model1.removeRow(0);
         }
-        list1.setModel(model1);
-        list1.updateUI();
+        for(String b[] : a){
+            model1.addRow(b);
+        }
+
+        table.updateUI();
     }
     public Grafica() {
         initialize();
     }
 
     private void initialize() {
+        String collum[] = {"Squadra","PG","V","P","S","GF","PUNTI"};
         model = new DefaultListModel<String>();
-        model1 = new DefaultListModel<String>();
+        model1 = new DefaultTableModel();
+        table = new JTable();
+        for(String a : collum)
+        model1.addColumn(a);
         frame = new JFrame();
         frame.setBounds(100, 100, 430, 286);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -143,40 +149,40 @@ public class Grafica extends JFrame {
 
         panel_1.add(btnNewButton_2);
 
-        JLabel lblNewLabel_15 = new JLabel("Squadra");
-        lblNewLabel_15.setForeground(new Color(255, 255, 255));
-        lblNewLabel_15.setBounds(25, 43, 61, 16);
-        panel_1.add(lblNewLabel_15);
-
-        JLabel lblNewLabel_16 = new JLabel("PG");
-        lblNewLabel_16.setForeground(new Color(255, 255, 255));
-        lblNewLabel_16.setBounds(124, 43, 16, 16);
-        panel_1.add(lblNewLabel_16);
-
-        JLabel lblNewLabel_17 = new JLabel("V");
-        lblNewLabel_17.setForeground(new Color(255, 255, 255));
-        lblNewLabel_17.setBounds(165, 43, 8, 16);
-        panel_1.add(lblNewLabel_17);
-
-        JLabel lblNewLabel_18 = new JLabel("P");
-        lblNewLabel_18.setForeground(new Color(255, 255, 255));
-        lblNewLabel_18.setBounds(195, 43, 16, 16);
-        panel_1.add(lblNewLabel_18);
-
-        JLabel lblNewLabel_19 = new JLabel("S");
-        lblNewLabel_19.setForeground(new Color(255, 255, 255));
-        lblNewLabel_19.setBounds(223, 43, 16, 16);
-        panel_1.add(lblNewLabel_19);
-
-        JLabel lblNewLabel_20 = new JLabel("GF");
-        lblNewLabel_20.setForeground(new Color(255, 255, 255));
-        lblNewLabel_20.setBounds(251, 43, 23, 16);
-        panel_1.add(lblNewLabel_20);
-
-        JLabel lblNewLabel_23 = new JLabel("Punti");
-        lblNewLabel_23.setForeground(new Color(255, 255, 255));
-        lblNewLabel_23.setBounds(280, 43, 61, 16);
-        panel_1.add(lblNewLabel_23);
+//        JLabel lblNewLabel_15 = new JLabel("Squadra");
+//        lblNewLabel_15.setForeground(new Color(255, 255, 255));
+//        lblNewLabel_15.setBounds(25, 43, 61, 16);
+//        panel_1.add(lblNewLabel_15);
+//
+//        JLabel lblNewLabel_16 = new JLabel("PG");
+//        lblNewLabel_16.setForeground(new Color(255, 255, 255));
+//        lblNewLabel_16.setBounds(124, 43, 16, 16);
+//        panel_1.add(lblNewLabel_16);
+//
+//        JLabel lblNewLabel_17 = new JLabel("V");
+//        lblNewLabel_17.setForeground(new Color(255, 255, 255));
+//        lblNewLabel_17.setBounds(165, 43, 8, 16);
+//        panel_1.add(lblNewLabel_17);
+//
+//        JLabel lblNewLabel_18 = new JLabel("P");
+//        lblNewLabel_18.setForeground(new Color(255, 255, 255));
+//        lblNewLabel_18.setBounds(195, 43, 16, 16);
+//        panel_1.add(lblNewLabel_18);
+//
+//        JLabel lblNewLabel_19 = new JLabel("S");
+//        lblNewLabel_19.setForeground(new Color(255, 255, 255));
+//        lblNewLabel_19.setBounds(223, 43, 16, 16);
+//        panel_1.add(lblNewLabel_19);
+//
+//        JLabel lblNewLabel_20 = new JLabel("GF");
+//        lblNewLabel_20.setForeground(new Color(255, 255, 255));
+//        lblNewLabel_20.setBounds(251, 43, 23, 16);
+//        panel_1.add(lblNewLabel_20);
+//
+//        JLabel lblNewLabel_23 = new JLabel("Punti");
+//        lblNewLabel_23.setForeground(new Color(255, 255, 255));
+//        lblNewLabel_23.setBounds(280, 43, 61, 16);
+//        panel_1.add(lblNewLabel_23);
 
 
         JLabel lblNewLabel_3 = new JLabel("New label");
@@ -184,16 +190,15 @@ public class Grafica extends JFrame {
         lblNewLabel_3.setBounds(25, 71, 386, 179);
         panel_1.add(lblNewLabel_3);
         
-        scrollPane1 = new JScrollPane();
+        scrollPane1 = new JScrollPane(table);
         scrollPane1.setBounds(25, 71, 386, 179);
         panel_1.add(scrollPane1);
-        
-        list1 = new JList();
-        list1.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
-        list1.setToolTipText("ciao");
-        list1.setBackground(new Color(255, 255, 255));
-        list1.setModel(model1);
-        scrollPane1.setViewportView(list1);
+        table.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+        table.setBackground(new Color(255, 255, 255));
+        table.setPreferredScrollableViewportSize(new Dimension(450,64));
+        table.setFillsViewportHeight(true);
+        table.setModel(model1);
+        scrollPane1.setViewportView(table);
         JLabel lblNewLabel_1 = new JLabel(new ImageIcon(Grafica.class.getResource("/Resource/2.jpeg")));
         lblNewLabel_1.setBounds(0, 0, 444, 272);
         panel_1.add(lblNewLabel_1);

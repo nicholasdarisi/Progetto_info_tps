@@ -121,14 +121,5 @@ public class Giornata {
 
 
 
-/*
- * milan 1 - 0 inter
- * juve 2 - 0 atletico
- * city 3 - 4 utd  -- > Squadra.g_fatti[0] = 4
- *
- * milan 3 - 0 atletico
- * utd 0 - 0 inter
- * city 3 - 1 juve
- */
 
 

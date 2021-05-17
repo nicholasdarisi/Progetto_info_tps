@@ -17,11 +17,12 @@ public class Controller implements ActionListener {
     Grafica view;
     Classifica c;
     Thread[] a;
-
-    public Controller(Grafica a, Classifica c, Thread[] b) {
+    String[][] str;
+    public Controller(Grafica a, Classifica c, Thread[] b,String[][] str ) {
         view = a;
         this.c = c;
         this.a = b;
+        this.str = str;
     }
 
 
@@ -29,7 +30,7 @@ public class Controller implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == view.getButton(0)) {
             view.switchPanel(0);
-            view.printC(c.Stampa_classifica());
+            view.addRow(c.Stampa_classifica(str));
         }
         if (e.getSource() == view.getButton(1)) {
             view.switchPanel(2);

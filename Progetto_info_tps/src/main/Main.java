@@ -9,6 +9,7 @@ import view.Grafica;
 
 public class Main {
     public static void main(String[] args) {
+        String[][] str = new String[12][7];
         Squadra s[] = new Squadra[12];
         Partita p[] = new Partita[12];
         Giornata g = new Giornata(0, 22);
@@ -36,7 +37,7 @@ public class Main {
             t[i] = new Thread(p[i]);
         }
         Grafica window = new Grafica();
-        window.addController(new Controller(window, c, t));
+        window.addController(new Controller(window, c, t,str));
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
