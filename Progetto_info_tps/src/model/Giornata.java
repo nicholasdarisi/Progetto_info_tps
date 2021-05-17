@@ -70,7 +70,6 @@ public class Giornata {
 
     public synchronized void out_game(Squadra x) {
         campolibero++;
-
         if (s1 != null && x.getids_int() == s1.getids_int()) {
             System.out.println(s1.getids_int() + " : deleting...");
             s1 = null;
@@ -80,7 +79,7 @@ public class Giornata {
         }
 
         count_p++;
-        System.out.println(x.getids_int() + " : ++ " + count_p);
+        System.out.println(x.getids_int() + " : ++ " + count_p + " Campo : " + campolibero);
         if (count_p == 12) {
             count_p = 0;
             this.x++;
@@ -89,7 +88,7 @@ public class Giornata {
 
         if (campolibero == 2) notifyAll();
         try {
-            wait();
+            wait(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
