@@ -102,7 +102,7 @@ public class Giornata {
     }
 
 
-    public int getn_giornata() {
+    public synchronized int getn_giornata() {
         return x;
     }
 
