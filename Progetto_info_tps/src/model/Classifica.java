@@ -54,7 +54,7 @@ public class Classifica {
 
         for (int i = 0; i < 12; i++) {
 
-            str[i] = g.getn_giornata() + " " + squadre[i].getVittorie() + " " + squadre[i].getPareggi() + " " + squadre[i].getSconfitte()
+            str[i] = " " +squadre[i].gNome()+ g.getn_giornata() + " " + squadre[i].getVittorie() + " " + squadre[i].getPareggi() + " " + squadre[i].getSconfitte()
                     + " " + squadre[i].getGoal_totali() + " " + squadre[i].getG_subiti() + " " + squadre[i].getDiff_reti()
                     + " " + squadre[i].getPunti();
         }
